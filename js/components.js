@@ -125,6 +125,12 @@ class GameBoard extends React.Component{
             </div>
         );
     }
+    componentDidMount(){
+        draggerFunction();
+    }
+    componentDidUpdate(){
+        draggerFunction();
+    }
 };
 
 ReactDOM.render(
