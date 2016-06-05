@@ -1,6 +1,16 @@
 #logo {
     min-height:300px;
+    padding-top:70px;
     background-image: url('../img/wood.jpg');
+    font-family: 'Bevan';
+    text-align:center;
+    color:antiquewhite;
+    font-size:110px;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+body{
+    font-family: 'Open-Sans';
 }
 
 nav {
@@ -22,4 +32,65 @@ nav {
 
 .navbar .navbar-collapse {
     text-align: center;
+}
+
+#board{
+background-color: goldenrod;
+    width:400px;
+    padding:0;
+}
+
+
+.tableRow{
+    height:100px;
+
+}
+
+.correct{
+
+
+    height:100px;
+    width:100px;
+    background-color: royalblue;
+    padding:5px;
+
+    float:left;
+
+}
+
+.guess{
+    height:100px;
+    width:300px;
+    background-color: brown;
+
+    padding-rigth:5px;
+    float:left;
+}
+
+.correctBox{
+
+    margin:5px;
+    width:35px;
+    height:35px;
+    border-radius: 100%;
+    border:solid 5px royalblue;
+    float:left;
+    background-color:black;
+
+}
+
+.guessBox{
+    margin:4px;
+    margin-top:14px;
+    margin-right:0;
+    float:left;
+    border-radius:100%;
+    border:solid 15px brown;
+
+
+    background-color:black;
+    min-width: 20px;
+   height:70px;
+    width: 70px;
+
 }
