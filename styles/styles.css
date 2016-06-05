@@ -10,8 +10,10 @@
 }
 
 body{
-    font-family: 'Open-Sans';
+    font-family: 'Open Sans';
 }
+
+
 
 nav {
     font-size:20px;
@@ -66,7 +68,9 @@ background-color: goldenrod;
     padding-rigth:5px;
     float:left;
 }
-
+br{
+    clear:both;
+}
 .correctBox{
 
     margin:5px;
@@ -93,4 +97,50 @@ background-color: goldenrod;
    height:70px;
     width: 70px;
 
+}
+
+#checkButton{
+    padding:30px;
+    text-align:center;
+}
+
+#colorPicker{
+    height:100px;
+    width:400px;
+    padding:5px;
+}
+
+.noneBox{
+    height:90px;
+    width:90px;
+    float:left;
+    margin:5px;
+    visibility: hidden;
+}
+
+.colorBox{
+    margin:5px;
+    width:38px;
+    height:38px;
+    border-radius:100%;
+    float:left
+}
+
+#color1{
+    background-color: firebrick;
+}
+#color2{
+    background-color: royalblue;
+}
+#color3{
+    background-color: seagreen;
+}
+#color4{
+    background-color: yellow;
+}
+#color5{
+    background-color: palevioletred;
+}
+#color6{
+    background-color: darkorange;
 }
