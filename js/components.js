@@ -3,21 +3,6 @@
  */
 
 
-var draggerFunction = function(){
-    $('.colorBox').draggable({
-        revert: true
-    });
-    $('.guessBox').droppable({
-        accepts: '.colorBox',
-        drop: function(event, ui) {
-            var bgColor = $(ui.draggable).css('backgroundColor');
-            $(this).css('backgroundColor', bgColor);
-            $(ui.draggable).remove();
-        }
-    });
-}
-
-
 class GameCorrect extends React.Component{
     render(){
         return (
@@ -35,10 +20,7 @@ class GameCorrect extends React.Component{
 
 class GameGuess extends React.Component{
     render(){
-
-
-
-        
+       
         return (
             <div className="guess">
                 <div className="guessBox"></div>
@@ -54,8 +36,6 @@ class GameGuess extends React.Component{
 class GameRow extends React.Component{
     render(){
 
-
-
         return (
             <div className="tableRow">
                 <GameCorrect />
@@ -68,10 +48,6 @@ class GameRow extends React.Component{
 
 class ColorPicker extends React.Component{
     render(){
-
-
-
-
 
         return (
             <div id="colorPicker">
@@ -106,8 +82,6 @@ class GameBoard extends React.Component{
     render(){
 
         draggerFunction();
-
-
 
         var rows = [];
         for ( var i = 0; i < rowCounter; i++ ) {
