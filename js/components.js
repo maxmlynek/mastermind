@@ -23,10 +23,10 @@ class GameGuess extends React.Component{
        
         return (
             <div className="guess">
-                <div className="guessBox"></div>
-                <div className="guessBox"></div>
-                <div className="guessBox"></div>
-                <div className="guessBox"></div>
+                <div className="guessBox" id="guess1"></div>
+                <div className="guessBox" id="guess2"></div>
+                <div className="guessBox" id="guess3"></div>
+                <div className="guessBox" id="guess4"></div>
                 <br />
             </div>
         );
@@ -75,8 +75,13 @@ class GameBoard extends React.Component{
         }
     }
     _handleClick(){
-        rowCounter++;
-        this.setState({noOfRows: rowCounter});
+        if(!areAllFilled()){
+            $('#infoBox').html('<p>Not all fields are filled</p>')
+        }
+        else {
+            rowCounter++;
+            this.setState({noOfRows: rowCounter});
+        }
     }
 
     render(){
@@ -97,6 +102,7 @@ class GameBoard extends React.Component{
                 {rows}
 
                 <ColorPicker />
+                <div id="infoBox"></div>
                 <div id="checkButton">
                     <button type="button" className="btn btn-primary" onClick={this._handleClick.bind(this)}>Check</button>
                 </div>
@@ -106,6 +112,7 @@ class GameBoard extends React.Component{
     }
     componentDidMount(){
         draggerFunction();
+        setColorArray();
     }
     componentDidUpdate(){
         draggerFunction();

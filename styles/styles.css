@@ -128,7 +128,14 @@ br{
 
 }
 
+#infoBox{
+    text-align:center;
+}
 
+#infoBox > p{
+    color:red;
+    font-weight: bold;
+}
 
 #color1{
     background-color: firebrick;
