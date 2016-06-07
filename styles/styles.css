@@ -99,23 +99,17 @@ br{
 
 }
 
+
 #checkButton{
     padding:30px;
     text-align:center;
 }
 
 #colorPicker{
+    margin-left:100px;
     height:100px;
     width:400px;
     padding-top:21px;
-}
-
-.noneBox{
-    height:90px;
-    width:90px;
-    float:left;
-    margin:5px;
-    visibility: hidden;
 }
 
 .colorBox{
@@ -136,6 +130,36 @@ br{
     color:red;
     font-weight: bold;
 }
+
+#computerGuess{
+    display:none;
+
+    margin-left:100px;
+    height:100px;
+    width:300px;
+    background-color: brown;
+
+    padding-rigth:5px;
+    float:left;
+}
+
+.computerGuessBox{
+    margin:4px;
+    margin-top:14px;
+    margin-right:0;
+    float:left;
+    border-radius:100%;
+    border:solid 15px brown;
+
+
+    background-color:black;
+    min-width: 20px;
+    height:70px;
+    width: 70px;
+
+}
+
+
 
 #color1{
     background-color: firebrick;

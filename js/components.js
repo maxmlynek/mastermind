@@ -7,16 +7,16 @@ class GameCorrect extends React.Component{
     render(){
         return (
             <div className="correct">
-                <div className="correctBox correctBoxUp"></div>
-                <div className="correctBox correctBoxUp"></div>
+                <div className="correctBox correctBoxUp" id="correct1"></div>
+                <div className="correctBox correctBoxUp" id="correct2"></div>
                 <br />
-                <div className="correctBox correctBoxDown"></div>
-                <div className="correctBox correctBoxDown"></div>
+                <div className="correctBox correctBoxDown" id="correct3"></div>
+                <div className="correctBox correctBoxDown" id="correct4"></div>
                 <br />
             </div>
         );
     }
-};
+}
 
 class GameGuess extends React.Component{
     render(){
@@ -31,7 +31,7 @@ class GameGuess extends React.Component{
             </div>
         );
     }
-};
+}
 
 class GameRow extends React.Component{
     render(){
@@ -44,14 +44,14 @@ class GameRow extends React.Component{
             </div>
         );
     }
-};
+}
 
 class ColorPicker extends React.Component{
     render(){
 
         return (
             <div id="colorPicker">
-                <div className="noneBox"></div>
+                
                 <div className="colorBox" id="color1"></div>
                 <div className="colorBox" id="color2"></div>
                 <div className="colorBox" id="color3"></div>
@@ -62,6 +62,22 @@ class ColorPicker extends React.Component{
             </div>
         );
     } 
+}
+
+
+class ComputerColors extends React.Component{
+    render(){
+
+        return (
+            <div id="computerGuess">
+                <div className="computerGuessBox" id="computerGuess1"></div>
+                <div className="computerGuessBox" id="computerGuess2"></div>
+                <div className="computerGuessBox" id="computerGuess3"></div>
+                <div className="computerGuessBox" id="computerGuess4"></div>
+                <br />
+            </div>
+        );
+    }
 }
 
 let rowCounter = 1;
@@ -79,8 +95,12 @@ class GameBoard extends React.Component{
             $('#infoBox').html('<p>Not all fields are filled</p>')
         }
         else {
-            rowCounter++;
-            this.setState({noOfRows: rowCounter});
+            $('#infoBox').html('');
+            let isWinner = checkCorrectness();
+            if(!isWinner) {
+                rowCounter++;
+                this.setState({noOfRows: rowCounter});
+            }
         }
     }
 
@@ -106,6 +126,7 @@ class GameBoard extends React.Component{
                 <div id="checkButton">
                     <button type="button" className="btn btn-primary" onClick={this._handleClick.bind(this)}>Check</button>
                 </div>
+                <ComputerColors />
             </div>
 
         );
@@ -113,11 +134,13 @@ class GameBoard extends React.Component{
     componentDidMount(){
         draggerFunction();
         setColorArray();
+        setComputerPlayerColors();
+        fillComputerColorBoxes();
     }
     componentDidUpdate(){
         draggerFunction();
     }
-};
+}
 
 ReactDOM.render(
     <GameBoard />,
