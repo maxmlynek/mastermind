@@ -37,9 +37,16 @@ nav {
 }
 
 #board{
+    margin-top: 100px;
+    margin-bottom: 200px;
 background-color: goldenrod;
     width:400px;
     padding:0;
+    border-radius:20px;
+}
+
+#boardHat{
+    height:20px;
 }
 
 
@@ -49,11 +56,13 @@ background-color: goldenrod;
 }
 
 .correct{
+    border: 1px dashed black;
+    border-radius: 15px;
+    margin: 5px;
+    margin-left: 10px;
 
-
-    height:100px;
-    width:100px;
-    background-color: royalblue;
+    height:88px;
+    width:83px;
     padding:5px;
 
     float:left;
@@ -61,9 +70,14 @@ background-color: goldenrod;
 }
 
 .guess{
-    height:100px;
-    width:300px;
-    background-color: brown;
+
+    border: 1px dashed black;
+    border-radius: 15px;
+    margin: 5px;
+    margin-right: 10px;
+
+    height:88px;
+    width:283px;
 
     padding-rigth:5px;
     float:left;
@@ -74,10 +88,11 @@ br{
 .correctBox{
 
     margin:5px;
-    width:35px;
-    height:35px;
+    margin-top:7px;
+    width:25px;
+    height:25px;
     border-radius: 100%;
-    border:solid 5px royalblue;
+    border:solid 2px goldenrod;
     float:left;
     background-color:black;
 
@@ -85,17 +100,17 @@ br{
 
 .guessBox{
     margin:4px;
-    margin-top:14px;
+    margin-top:11px;
     margin-right:0;
     float:left;
     border-radius:100%;
-    border:solid 15px brown;
+    border:solid 11px goldenrod;
 
 
     background-color:black;
     min-width: 20px;
-   height:70px;
-    width: 70px;
+   height:65px;
+    width: 65px;
 
 }
 
@@ -159,6 +174,10 @@ br{
 
 }
 
+#footerWrapper{
+    height:200px;
+    background-color:goldenrod;
+}
 
 
 #color1{
