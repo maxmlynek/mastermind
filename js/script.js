@@ -3,6 +3,11 @@
  */
 
 var draggerFunction = function(){
+
+
+
+
+
     $('.colorBox').draggable({
         revert: true
     });

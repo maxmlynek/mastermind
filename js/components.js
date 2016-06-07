@@ -37,7 +37,7 @@ class GameRow extends React.Component{
     render(){
 
         return (
-            <div className="tableRow">
+            <div className="tableRow" id={this.props.idType}>
                 <GameCorrect />
                 <GameGuess />
                 <br />
@@ -80,23 +80,28 @@ class GameBoard extends React.Component{
     }
 
     render(){
-
         draggerFunction();
+
 
         var rows = [];
         for ( var i = 0; i < rowCounter; i++ ) {
-            rows.push(<GameRow />);
+            if(i == rowCounter-1){
+                rows.push(<GameRow idType="lastOne"/>);
+            } else {
+                rows.push(<GameRow idType="normalRow"/>);
+            }
         }
 
         return (
             <div id="boardWrapper">
                 {rows}
-                <h1></h1>
+
                 <ColorPicker />
                 <div id="checkButton">
                     <button type="button" className="btn btn-primary" onClick={this._handleClick.bind(this)}>Check</button>
                 </div>
             </div>
+
         );
     }
     componentDidMount(){

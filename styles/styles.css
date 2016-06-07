@@ -107,7 +107,7 @@ br{
 #colorPicker{
     height:100px;
     width:400px;
-    padding:5px;
+    padding-top:21px;
 }
 
 .noneBox{
@@ -126,9 +126,9 @@ br{
     float:left;
     cursor:move;
 
-
-
 }
+
+
 
 #color1{
     background-color: firebrick;
