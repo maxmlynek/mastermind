@@ -5,17 +5,15 @@
 var draggerFunction = function(){
 
 
-
-
-
     $('.colorBox').draggable({
         revert: true
     });
-    $('.guessBox').droppable({
+    $('#lastOne > .guess > .guessBox').droppable({
         accepts: '.colorBox',
         drop: function(event, ui) {
             var bgColor = $(ui.draggable).css('backgroundColor');
             $(this).css('backgroundColor', bgColor);
         }
     });
+    $('#normalRow > .guess > .guessBox').droppable('disable');
 }
