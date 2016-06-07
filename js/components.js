@@ -119,14 +119,14 @@ class GameBoard extends React.Component{
 
         return (
             <div id="boardWrapper">
-                <div id="boardHat"></div>
+               
                 {rows}
 
                 <ColorPicker />
                 <div id="infoBox"></div>
                 <ComputerColors />
                 <div id="checkButton">
-                    <button type="button" className="btn btn-primary" onClick={this._handleClick.bind(this)}>Check</button>
+                    <button type="button" id="checkButtonInner" onClick={this._handleClick.bind(this)}>Check</button>
                 </div>
                 
             </div>

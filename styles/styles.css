@@ -1,3 +1,13 @@
+/*
+.color-primary-1 { color: #3C1800 }
+.color-primary-2 { color: #682A00 }
+.color-primary-3 { color: #914714 }
+.color-primary-4 { color: #B4642D }
+.color-primary-5 { color: #D4854F }
+*/
+
+
+
 #logo {
     min-height:300px;
     padding-top:70px;
@@ -6,11 +16,12 @@
     text-align:center;
     color:antiquewhite;
     font-size:110px;
-    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    text-shadow: -2px 0 #3C1800, 0 2px #3C1800, 2px 0 #3C1800, 0 -2px #3C1800;
 }
 
 body{
     font-family: 'Open Sans';
+    background-color:#D4854F;
 }
 
 
@@ -19,6 +30,7 @@ nav {
     font-size:20px;
     padding-top:5px;
     padding-bottom:5px;
+    background-color:#3C1800;
 }
 
 .not-left{
@@ -26,28 +38,18 @@ nav {
 }
 
 
-.navbar .navbar-nav {
-    display: inline-block;
-    float: none;
-    vertical-align: top;
-}
-
-.navbar .navbar-collapse {
-    text-align: center;
-}
-
 #board{
     margin-top: 100px;
     margin-bottom: 200px;
-background-color: goldenrod;
-    width:400px;
+background-color: #914714;
+    width:406px;
     padding:0;
     border-radius:20px;
+    border:solid 3px #3C1800;
+    padding-bottom:20px;
+    padding-top:20px;
 }
 
-#boardHat{
-    height:20px;
-}
 
 
 .tableRow{
@@ -56,7 +58,7 @@ background-color: goldenrod;
 }
 
 .correct{
-    border: 1px dashed black;
+    border: 1px dashed #3C1800;
     border-radius: 15px;
     margin: 5px;
     margin-left: 10px;
@@ -71,7 +73,7 @@ background-color: goldenrod;
 
 .guess{
 
-    border: 1px dashed black;
+    border: 1px dashed #3C1800;
     border-radius: 15px;
     margin: 5px;
     margin-right: 10px;
@@ -92,9 +94,9 @@ br{
     width:25px;
     height:25px;
     border-radius: 100%;
-    border:solid 2px goldenrod;
+    border:solid 2px #914714;
     float:left;
-    background-color:black;
+    background-color:#3C1800;
 
 }
 
@@ -104,10 +106,10 @@ br{
     margin-right:0;
     float:left;
     border-radius:100%;
-    border:solid 11px goldenrod;
+    border:solid 11px #914714;
 
 
-    background-color:black;
+    background-color:#3C1800;
     min-width: 20px;
    height:65px;
     width: 65px;
@@ -117,6 +119,7 @@ br{
 
 #checkButton{
     padding:30px;
+    padding-top:0px;
     text-align:center;
 }
 
@@ -141,18 +144,19 @@ br{
     text-align:center;
 }
 
-#infoBox > p{
-    color:red;
+
+p {
+    color:#D4854F;
     font-weight: bold;
+    font-size:20px;
 }
 
 #computerGuess{
     display:none;
-
     margin-left:100px;
     height:100px;
     width:300px;
-    background-color: brown;
+    background-color: #914714 ;
 
     padding-rigth:5px;
     float:left;
@@ -164,7 +168,7 @@ br{
     margin-right:0;
     float:left;
     border-radius:100%;
-    border:solid 15px brown;
+    border:solid 15px #914714 ;
 
 
     background-color:black;
@@ -176,7 +180,7 @@ br{
 
 #footerWrapper{
     height:200px;
-    background-color:goldenrod;
+    background-color:#682A00;
 }
 
 
@@ -200,3 +204,138 @@ br{
 }
 
 
+#checkButtonInner{
+    padding:10px;
+    padding-left:15px;
+    padding-right:15px;
+    font-size:20px;
+    font-weight:bold;
+    background:#B4642D;
+   color: #3C1800;
+    border: 3px solid #3c1800;
+    border-radius:15px;
+}
+
+#checkButtonInner:hover{
+    background:#3c1800;
+    color: #B4642D;
+    border: 3px solid #B4642D;
+}
+#checkButtonInner:focus{
+    outline:none;
+}
+#checkButtonInner:active{
+    outline:none;
+    background:#682A00;
+    color: #B4642D;
+    border: 3px solid #B4642D;
+}
+
+
+.navbar{
+    background-image: none;
+}
+/*twbscolor*/
+.navbar-default {
+    background-color: #3c1800;
+    border-color: #682a00;
+}
+.navbar-default .navbar-brand {
+    color: #d4ac90;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #d4854f;
+}
+.navbar-default .navbar-text {
+    color: #d4ac90;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #d4ac90;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #d4854f;
+
+
+
+
+}
+.navbar-default .navbar-nav > li > .dropdown-menu {
+    background-color: #3c1800;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+    color: #d4ac90;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+    color: #d4854f;
+    background-color: #682a00;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
+    background-color: #682a00;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #d4854f;
+    background-color: #682a00;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #d4854f;
+    background-color: #682a00;
+}
+
+
+
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #d4854f;
+    background-color: #682a00;
+
+
+
+
+
+}
+.navbar-default .navbar-toggle {
+    border-color: #682a00;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #682a00;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #d4ac90;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+    border-color: #d4ac90;
+}
+.navbar-default .navbar-link {
+    color: #d4ac90;
+}
+.navbar-default .navbar-link:hover {
+    color: #d4854f;
+}
+
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #d4ac90;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #d4854f;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+        color: #d4854f;
+        background-color: #682a00;
+    }
+}

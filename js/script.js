@@ -21,7 +21,7 @@ var checkCorrectness = function() {
     if(guess4 == computerPlayerColors[3]) {redFields++; whiteFields--;}
 
     if(redFields === 4){
-        $('#infoBox').html('<p style="color:green">You won! These are colors picked by computer:</p>');
+        $('#infoBox').html('<p>You won! These are colors picked by computer:</p>');
         $('.colorBox').draggable('disable');
         $('#computerGuess').css("display", "initial");
         $('#checkButton').css('display', 'none');
