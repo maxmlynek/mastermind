@@ -96,7 +96,7 @@ class GameBoard extends React.Component{
         }
         else {
             $('#infoBox').html('');
-            let isWinner = checkCorrectness();
+            let isWinner = checkCorrectness(rowCounter);
             if(!isWinner) {
                 rowCounter++;
                 this.setState({noOfRows: rowCounter});

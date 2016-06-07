@@ -4,8 +4,14 @@
 
 var colorArray = [];
 var computerPlayerColors = [];
+var gameTimeStart;
+var gameTimeEnd;
 
-var checkCorrectness = function() {
+$(document).ready(function(){
+    gameTimeStart = new Date();
+});
+
+var checkCorrectness = function(rowCounter) {
 
     var redFields = 0;
     var whiteFields = 0;
@@ -21,7 +27,12 @@ var checkCorrectness = function() {
     if(guess4 == computerPlayerColors[3]) {redFields++; whiteFields--;}
 
     if(redFields === 4){
-        $('#infoBox').html('<p>You won! These are colors picked by computer:</p>');
+        gameTimeEnd = new Date();
+        var gameTime = (gameTimeEnd - gameTimeStart);
+        var seconds = Math.floor((gameTime / 1000) % 60);
+        var minutes = Math.floor((gameTime / (60 * 1000)) % 60);
+        var gameTimeString = minutes+ " min " +seconds+" sec";
+        $('#infoBox').html('<p>You won using '+rowCounter+' rows in '+gameTimeString+'! These are colors picked by computer:</p>');
         $('.colorBox').draggable('disable');
         $('#computerGuess').css("display", "initial");
         $('#checkButton').css('display', 'none');
