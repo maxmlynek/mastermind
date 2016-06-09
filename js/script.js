@@ -7,9 +7,22 @@ var computerPlayerColors = [];
 var gameTimeStart;
 var gameTimeEnd;
 
-$(document).ready(function(){
-    gameTimeStart = new Date();
+
+$(document).ready(function() {
+    $('#clickGame').click(function(){
+        $('#textBoard').css("display", "none");
+        $('#board').css("display", "initial");
+    });
+    $('#clickAbout').click(function(){
+        $('#board').css("display", "none");
+        $('#textBoard').css("display", "initial");
+    });
 });
+
+var beginGame = function(){
+    gameTimeStart = new Date();
+};
+
 
 var checkCorrectness = function(rowCounter) {
 
@@ -129,6 +142,6 @@ var areAllFilled = function(){
     var x = colorArray[0];
     if(x === guess1 || x === guess2 || x === guess3 || x === guess4 ) {
         return false;
-    } 
+    }
     return true;
 }

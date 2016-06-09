@@ -3,8 +3,8 @@
  */
 
 
-class GameCorrect extends React.Component{
-    render(){
+class GameCorrect extends React.Component {
+    render() {
         return (
             <div className="correct">
                 <div className="correctBox correctBoxUp" id="correct1"></div>
@@ -18,9 +18,9 @@ class GameCorrect extends React.Component{
     }
 }
 
-class GameGuess extends React.Component{
-    render(){
-       
+class GameGuess extends React.Component {
+    render() {
+
         return (
             <div className="guess">
                 <div className="guessBox" id="guess1"></div>
@@ -33,8 +33,8 @@ class GameGuess extends React.Component{
     }
 }
 
-class GameRow extends React.Component{
-    render(){
+class GameRow extends React.Component {
+    render() {
 
         return (
             <div className="tableRow" id={this.props.idType}>
@@ -46,12 +46,12 @@ class GameRow extends React.Component{
     }
 }
 
-class ColorPicker extends React.Component{
-    render(){
+class ColorPicker extends React.Component {
+    render() {
 
         return (
             <div id="colorPicker">
-                
+
                 <div className="colorBox" id="color1"></div>
                 <div className="colorBox" id="color2"></div>
                 <div className="colorBox" id="color3"></div>
@@ -61,12 +61,12 @@ class ColorPicker extends React.Component{
                 <br />
             </div>
         );
-    } 
+    }
 }
 
 
-class ComputerColors extends React.Component{
-    render(){
+class ComputerColors extends React.Component {
+    render() {
 
         return (
             <div id="computerGuess">
@@ -81,36 +81,42 @@ class ComputerColors extends React.Component{
 }
 
 let rowCounter = 1;
-class GameBoard extends React.Component{
+class GameBoard extends React.Component {
 
-    constructor(){
+    constructor() {
         super();
 
         this.state = {
-            noOfRows : 1
+            noOfRows: 1
         }
     }
-    _handleClick(){
-        if(!areAllFilled()){
-            $('#infoBox').html('<p>Not all fields are filled</p>')
-        }
-        else {
+
+    _handleClick() {
+        if (!areAllFilled()) {
+            $('#infoBox').html('<p>Not all fields are filled</p>');
+        } else {
+
+            if (rowCounter == 1) {
+                beginGame();
+            }
+
             $('#infoBox').html('');
             let isWinner = checkCorrectness(rowCounter);
-            if(!isWinner) {
+            if (!isWinner) {
                 rowCounter++;
                 this.setState({noOfRows: rowCounter});
             }
         }
+
     }
 
-    render(){
+    render() {
         draggerFunction();
 
 
         var rows = [];
-        for ( var i = 0; i < rowCounter; i++ ) {
-            if(i == rowCounter-1){
+        for (var i = 0; i < rowCounter; i++) {
+            if (i == rowCounter - 1) {
                 rows.push(<GameRow idType="lastOne"/>);
             } else {
                 rows.push(<GameRow idType="normalRow"/>);
@@ -119,27 +125,31 @@ class GameBoard extends React.Component{
 
         return (
             <div id="boardWrapper">
-               
-                {rows}
 
+
+                {rows}
                 <ColorPicker />
                 <div id="infoBox"></div>
                 <ComputerColors />
                 <div id="checkButton">
                     <button type="button" id="checkButtonInner" onClick={this._handleClick.bind(this)}>Check</button>
                 </div>
-                
+
+
             </div>
+
 
         );
     }
-    componentDidMount(){
+
+    componentDidMount() {
         draggerFunction();
         setColorArray();
         setComputerPlayerColors();
         fillComputerColorBoxes();
     }
-    componentDidUpdate(){
+
+    componentDidUpdate() {
         draggerFunction();
     }
 }
